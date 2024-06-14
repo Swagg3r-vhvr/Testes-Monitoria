@@ -3,7 +3,7 @@
     {
       "type": "geojson",
       "config": {
-        "url": "https://raw.githubusercontent.com/Swagg3r-vhvr/Testes-Monitoria/main/teste_regional_mg_2.json",
+        "url": "raw.githubusercontent.com/Swagg3r-vhvr/Testes-Monitoria/main/teste_regional_mg_2.json",
         "style": {
           "color": "green",
           "opacity": 0.7
