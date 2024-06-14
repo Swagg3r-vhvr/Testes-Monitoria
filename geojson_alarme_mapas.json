@@ -1,0 +1,113 @@
+{
+  "layers": [
+    {
+      "type": "geojson",
+      "config": {
+        "url": "public/maps/brazil_regions.geojson",
+        "style": {
+          "color": "green",
+          "opacity": 0.7
+        },
+        "styleRules": [
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - MINAS",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - Nordeste",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - RJ Baixada",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - RJ Zona Sul + Lagos",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - SP Centro + Sul",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - SP INTERIOR",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - SP Leste + Norte",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - SP LITORAL+ABC",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região - SP NOROESTE+PR",
+            "color": "red",
+            "opacity": 0.7
+          },
+          {
+            "rule": "Feature property",
+            "property": "Region",
+            "value": "Região Centro Oeste + ES",
+            "color": "red",
+            "opacity": 0.7
+          }
+        ]
+      }
+    },
+    {
+      "type": "markers",
+      "config": {
+        "query": "SELECT latitude, longitude, COUNT(*) as problems FROM your_table WHERE problem_name LIKE '%MPLS%' OR problem_name LIKE '%INT%' GROUP BY latitude, longitude",
+        "locationMode": "fields",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "style": {
+          "symbol": "circle",
+          "size": "problems",
+          "color": [
+            {
+              "threshold": 20,
+              "color": "red"
+            },
+            {
+              "threshold": 10,
+              "color": "yellow"
+            },
+            {
+              "threshold": 0,
+              "color": "green"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
